@@ -22,12 +22,12 @@ import Oidc from 'oidc-client';
 var authIP = '192.168.7.201';
 if (location.search.indexOf('local')) { authIP = 'localhost'; }
 var config = {
-    authority: 'https://' + authIP + ':5001',
+    authority: `https://${authIP}:5001`,
     client_id: "spa",
-    redirect_uri: "https://localhost:8030/callback.html",
+    redirect_uri: "https://maps.kosmosnimki.ru/api/plugins/external/gmxPluginOuth2/public/callback.html",
     response_type: "code",
     scope:"openid profile email api1",
-    post_logout_redirect_uri : "https://localhost:8030/index.html",
+    post_logout_redirect_uri : "https://maps.kosmosnimki.ru/api/index.html?NKL6C",
 };
 
 var mgr = new Oidc.UserManager(config);
